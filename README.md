@@ -33,4 +33,4 @@ Conecta el repositorio de GitHub y usa la carpeta del proyecto como raíz.
 
 Las cinco direcciones verificadas están en los botones del bloque Sucursales en `src/index.html`. Contry es la ubicación inicial. El mapa se carga desde Google Maps al servir la página por HTTP o HTTPS en un navegador compatible y requiere conexión. Los enlaces de ubicación e indicaciones también están disponibles cuando el mapa integrado está bloqueado.
 
-La promoción y los precios son datos de demostración. La página conserva la etiqueta `noindex` del demo.
+La promoción y los precios son datos de demostración.
