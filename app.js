@@ -333,13 +333,16 @@ if (branchPicker) {
   const browserPage = window.self === window.top || window.frameElement !== null;
   let canEmbed = servedOverHttp && browserPage && window.origin !== "null";
 
-  function updateBranchMap(name, destination) {
+  function updateBranchMap() {
+    const name = activeBranch.textContent.trim();
+    const destination = encodeURIComponent(activeBranch.dataset.address);
     branchMapName.textContent = name;
     branchMapLink.href = `https://www.google.com/maps/search/?api=1&query=${destination}`;
     if (!canEmbed) return;
 
     branchMap.title = `Google Maps: sucursal ${name}`;
-    branchMap.src = `https://www.google.com/maps?q=${destination}&z=17&hl=es&output=embed`;
+    const mapUrl = `https://www.google.com/maps?q=${destination}&z=17&hl=es&output=embed`;
+    if (branchMap.getAttribute("src") !== mapUrl) branchMap.src = mapUrl;
     branchMap.hidden = false;
     branchMapPreview.hidden = true;
   }
@@ -355,7 +358,16 @@ if (branchPicker) {
       branchMapPreview.hidden = false;
     });
   }
-  updateBranchMap(activeBranch.textContent.trim(), encodeURIComponent(activeBranch.dataset.address));
+  if (canEmbed && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      observer.disconnect();
+      updateBranchMap();
+    });
+    observer.observe(branchMap.parentElement);
+  } else {
+    updateBranchMap();
+  }
 
   branchPicker.addEventListener("click", (event) => {
     const branch = event.target.closest(".branch-option");
@@ -374,6 +386,6 @@ if (branchPicker) {
     branchPhone.href = `tel:+52${phone.replace(/\D/g, "")}`;
     branchHours.textContent = hours;
     branchDirections.href = `https://www.google.com/maps/dir/?api=1&destination=${destination}`;
-    updateBranchMap(name, destination);
+    updateBranchMap();
   });
 }
