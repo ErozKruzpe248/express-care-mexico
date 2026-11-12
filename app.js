@@ -72,7 +72,7 @@ panels.innerHTML = services.map((service, index) => `
       ${icon(service.id)} <span>${service.label}</span> ${icon("down", "accordion-chevron")}
     </button>
   </h3>
-  <article id="panel-${service.id}" class="service-panel" role="tabpanel"
+  <div id="panel-${service.id}" class="service-panel" role="tabpanel"
     aria-labelledby="tab-${service.id}" tabindex="0" ${index ? "hidden" : ""}>
     <button class="zoom-trigger service-media" type="button" aria-label="Ampliar imagen de ${service.label.toLowerCase()}" aria-haspopup="dialog">
       <img class="service-image" src="${serviceAssetUrls[service.image] ?? `./assets/${service.image}`}" alt="${service.alt}" width="500" height="500" loading="lazy" decoding="async">
@@ -90,7 +90,7 @@ panels.innerHTML = services.map((service, index) => `
       <a class="button button-navy" href="${directoryUrl}">Buscar un centro ${icon("external", "direction-icon")}</a>
       <p class="service-note">Ficha de demostración. Consulta el precio y la disponibilidad con tu centro.</p>
     </div>
-  </article>
+  </div>
 `).join("");
 
 const desktopTabs = Array.from(document.querySelectorAll('[role="tab"]'));
