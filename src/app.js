@@ -223,7 +223,7 @@ if ("IntersectionObserver" in window && !reducedMotion.matches) {
       observer.unobserve(entry.target);
     }
   }, { rootMargin: "0px 0px -24px 0px", threshold: 0.08 });
-  document.querySelectorAll(".overview, .services, .contact, .share, .finder").forEach((section) => {
+  document.querySelectorAll(".overview, .services, .contact, .share").forEach((section) => {
     if (section.getBoundingClientRect().top >= window.innerHeight) observer.observe(section);
   });
 }
