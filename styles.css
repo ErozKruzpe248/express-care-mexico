@@ -161,7 +161,7 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
 .agency-cta { flex-shrink: 0; min-height: 46px; border-radius: 30px; background: var(--red); color: white; text-align: center; }
 .agency-cta:hover { background: #ab142a; }
 .agency-cta .icon { width: 19px; height: 19px; }
-.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 62px; font-size: 12px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 62px; font-size: 12px; padding-inline-end: calc(52px + env(safe-area-inset-right)); }
 .footer a:hover { text-decoration: underline; }
 .back-top { position: fixed; z-index: 3; right: max(14px, env(safe-area-inset-right)); bottom: max(15px, env(safe-area-inset-bottom)); width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--navy); box-shadow: 0 2px 8px #122a551a; font-size: 19px; }
 
@@ -244,7 +244,7 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
   .agency-footer { flex-direction: column; gap: 14px; text-align: center; }
   .agency-brand { flex-basis: auto; }
   .agency-cta { flex-shrink: 1; max-width: 100%; }
-  .footer-inner { min-height: 76px; flex-wrap: wrap; align-content: center; gap: 5px 14px; padding-inline-end: calc(52px + env(safe-area-inset-right)); }
+  .footer-inner { min-height: 76px; flex-wrap: wrap; align-content: center; gap: 5px 14px; }
   .footer-inner p { margin: 0; }
 }
 
