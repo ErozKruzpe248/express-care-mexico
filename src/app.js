@@ -1,4 +1,3 @@
-const directoryUrl = "https://expresscarebyvalvoline.com/mx-es/buscar-un-centro/";
 const serviceAssetUrls = globalThis.expressCareAssets ?? {};
 const services = [
   {
@@ -87,7 +86,7 @@ panels.innerHTML = services.map((service, index) => `
           <div class="service-option"><h4>${title}</h4><p>${description}</p></div>
         `).join("")}
       </div>
-      <a class="button button-navy" href="${directoryUrl}">Buscar un centro ${icon("external", "direction-icon")}</a>
+      <a class="button button-navy" href="#contacto">Buscar un centro ${icon("down", "direction-icon")}</a>
       <p class="service-note">Ficha de demostración. Consulta el precio y la disponibilidad con tu centro.</p>
     </div>
   </div>
@@ -227,38 +226,6 @@ if ("IntersectionObserver" in window && !reducedMotion.matches) {
   document.querySelectorAll(".overview, .services, .contact, .share, .finder").forEach((section) => {
     if (section.getBoundingClientRect().top >= window.innerHeight) observer.observe(section);
   });
-}
-
-const duration = 7 * 24 * 60 * 60 * 1000;
-const deadlineKey = "express-care-demo-deadline";
-let deadline = Date.now() + duration;
-try {
-  const savedDeadline = Number(localStorage.getItem(deadlineKey));
-  if (savedDeadline > 0 && Number.isFinite(savedDeadline)) deadline = savedDeadline;
-  else localStorage.setItem(deadlineKey, String(deadline));
-} catch {
-  // The countdown still works in this visit when storage is unavailable.
-}
-const timeParts = [
-  [document.getElementById("days"), 86400],
-  [document.getElementById("hours"), 3600],
-  [document.getElementById("minutes"), 60],
-  [document.getElementById("seconds"), 1]
-];
-function updateCountdown() {
-  let seconds = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
-  const remaining = seconds;
-  for (const [element, unit] of timeParts) {
-    const value = String(Math.floor(seconds / unit)).padStart(2, "0");
-    if (element.textContent !== value) element.textContent = value;
-    seconds %= unit;
-  }
-  return remaining > 0;
-}
-if (updateCountdown()) {
-  const timer = setInterval(() => {
-    if (!updateCountdown()) clearInterval(timer);
-  }, 1000);
 }
 
 const shareUrl = new URL(location.href);
