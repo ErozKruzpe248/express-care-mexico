@@ -34,3 +34,9 @@ Conecta el repositorio de GitHub y usa la carpeta del proyecto como raíz.
 Las cinco direcciones verificadas están en los botones del bloque Sucursales en `src/index.html`. Contry es la ubicación inicial. El mapa se carga desde Google Maps al servir la página por HTTP o HTTPS en un navegador compatible y requiere conexión. Los enlaces de ubicación e indicaciones también están disponibles cuando el mapa integrado está bloqueado.
 
 La promoción y los precios son datos de demostración.
+
+## Publicación y promoción
+
+El demo de GitHub Pages usa `noindex`. Antes de publicar a nombre del cliente, confirma por escrito la autorización de uso de la marca y acuerda quién mantendrá las promociones. Al pasar al subdominio definitivo, actualiza las URL absolutas en `src/index.html`, incluidas la canónica, `og:url`, `og:image` y los identificadores del JSON-LD. Revisa la directiva `noindex` según corresponda a ese sitio.
+
+La oferta de ejemplo termina el 30 de noviembre de 2026, hora del centro de México. A partir del 1 de diciembre la portada muestra el mensaje de servicios. Para renovar la promoción, actualiza el texto de vigencia en `src/index.html` y las dos fechas de `src/app.js`.

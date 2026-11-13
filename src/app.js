@@ -1,3 +1,25 @@
+const heroPromo = document.getElementById("hero-promo");
+const heroServices = document.getElementById("hero-services");
+const promoStart = Date.parse("2026-11-01T00:00:00-06:00");
+const promoEnd = Date.parse("2026-12-01T00:00:00-06:00");
+let promoTimer;
+
+function updatePromotion() {
+  clearTimeout(promoTimer);
+  const now = Date.now();
+  const active = now >= promoStart && now < promoEnd;
+  heroPromo.hidden = !active;
+  heroServices.hidden = active;
+  if (now < promoEnd) {
+    const nextChange = now < promoStart ? promoStart : promoEnd;
+    promoTimer = setTimeout(updatePromotion, Math.min(nextChange - now, 2_147_483_647));
+  }
+}
+
+window.addEventListener("pageshow", updatePromotion);
+document.addEventListener("visibilitychange", updatePromotion);
+updatePromotion();
+
 const serviceAssetUrls = globalThis.expressCareAssets ?? {};
 const services = [
   {
@@ -78,12 +100,12 @@ panels.innerHTML = services.map((service, index) => `
       <span class="zoom-indicator">${icon("expand")}</span>
     </button>
     <div class="service-copy">
-      <h3>${service.title}</h3>
+      <h3 class="service-title">${service.title}</h3>
       <p class="service-price">${service.price} <span>Precio de ejemplo</span></p>
       <p class="service-description">${service.description}</p>
       <div class="service-options">
         ${service.options.map(([title, description]) => `
-          <div class="service-option"><h4>${title}</h4><p>${description}</p></div>
+          <div class="service-option"><p class="service-option-title">${title}</p><p class="service-option-description">${description}</p></div>
         `).join("")}
       </div>
       <a class="button button-navy" href="#contacto">Buscar un centro ${icon("down", "direction-icon")}</a>
@@ -119,6 +141,7 @@ function syncPanelLabels() {
     panel.setAttribute("role", mobileLayout.matches ? "region" : "tabpanel");
     panel.setAttribute("aria-labelledby", `${mobileLayout.matches ? "accordion" : "tab"}-${id}`);
     panel.tabIndex = mobileLayout.matches ? -1 : 0;
+    panel.querySelector(".service-title").setAttribute("aria-level", mobileLayout.matches ? "4" : "3");
   }
   if (!mobileLayout.matches && !selectedService) selectService(services[0].id);
 }
