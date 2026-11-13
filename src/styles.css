@@ -152,13 +152,13 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
 .share-more.is-copied { background: #107c41; }
 .share-status { min-height: 20px; margin: 8px 0 0; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
 
-.footer { --matangazo-red: #ed1c24; --matangazo-ink: #171717; margin-top: 20px; color: var(--muted); }
-.agency-footer { display: grid; grid-template-columns: max-content minmax(0, 1fr) max-content; align-items: center; gap: clamp(16px, 2.5vw, 36px); padding: clamp(20px, 3vw, 36px); border: 1px solid #e8e5e5; border-top: 4px solid var(--matangazo-red); border-radius: var(--radius-panel); background: white; color: var(--matangazo-ink); box-shadow: var(--shadow-panel); }
-.agency-brand { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; justify-self: start; font-size: 19px; font-weight: 850; letter-spacing: -.035em; }
-.agency-brand img { width: 44px; height: 44px; flex: none; object-fit: contain; }
-.agency-footer h2 { margin: 0; font-size: clamp(21px, 2.45vw, 31px); line-height: 1.15; letter-spacing: -.035em; }
-.agency-cta { background: #bd151c; color: white; text-align: center; }
-.agency-cta:hover { background: #9f1118; }
+.footer { margin-top: 20px; color: var(--muted); }
+.agency-footer { display: flex; justify-content: center; align-items: center; gap: clamp(16px, 2vw, 24px); min-height: 116px; padding: 22px; border-radius: var(--radius-panel); background: var(--blue); color: white; box-shadow: var(--shadow-panel); }
+.agency-brand { display: grid; place-items: center; flex: 0 0 60px; width: 60px; height: 60px; border-radius: 12px; background: white; }
+.agency-brand img { width: 44px; max-width: 44px; height: 44px; object-fit: contain; }
+.agency-footer h2 { max-width: 21ch; margin: 0; font-size: clamp(24px, 2.9vw, 37px); line-height: 1.08; letter-spacing: -.045em; }
+.agency-cta { flex-shrink: 0; min-height: 46px; border-radius: 30px; background: var(--red); color: white; text-align: center; }
+.agency-cta:hover { background: #ab142a; }
 .agency-cta .icon { width: 19px; height: 19px; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 62px; font-size: 12px; }
 .footer a:hover { text-decoration: underline; }
@@ -240,8 +240,9 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
   .contact .branch-details a, .footer-inner a { display: inline-flex; align-items: center; min-height: 44px; padding: 4px 8px; }
   .contact .map { min-height: 300px; }
   .share { padding: 54px 0 32px; }
-  .agency-footer { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-  .agency-cta { justify-self: start; }
+  .agency-footer { flex-direction: column; gap: 14px; text-align: center; }
+  .agency-brand { flex-basis: auto; }
+  .agency-cta { flex-shrink: 1; max-width: 100%; }
   .footer-inner { min-height: 76px; flex-wrap: wrap; align-content: center; gap: 5px 14px; }
   .footer-inner p { margin: 0; }
 }
