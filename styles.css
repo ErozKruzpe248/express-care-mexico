@@ -54,7 +54,7 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
 .header nav > a { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding-inline: 18px; border-radius: var(--radius-control); background: #eff2f7; color: var(--navy); text-transform: uppercase; font-size: 12px; font-weight: 800; letter-spacing: .04em; }
 .header nav > a:hover { background: #e0e8f4; }
 .header nav > .nav-locator { margin-left: 13px; min-width: 50px; min-height: 50px; padding: 12px; background: var(--red); color: white; }
-.header nav > .nav-locator:hover, .button-red:hover { background: #ab142a; }
+.header nav > .nav-locator:hover { background: #ab142a; }
 .nav-locator .icon { width: 21px; height: 21px; }
 .mobile-menu, .mobile-locator-label { display: none; }
 
@@ -152,11 +152,14 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
 .share-more.is-copied { background: #107c41; }
 .share-status { min-height: 20px; margin: 8px 0 0; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
 
-.finder { display: flex; justify-content: center; align-items: center; gap: 20px; min-height: 116px; padding: 22px; border-radius: var(--radius-panel); background: var(--blue); color: white; box-shadow: var(--shadow-panel); }
-.finder h2 { margin: 0; font-size: clamp(24px, 2.9vw, 37px); line-height: 1.04; text-align: right; text-transform: uppercase; letter-spacing: -.045em; }
-.finder h2 span { display: block; font-size: .77em; text-transform: none; }
-.button-red { min-width: 173px; border-radius: 30px; background: var(--red); color: white; }
-.footer { margin-top: 20px; border-top: 1px solid var(--line); color: var(--muted); }
+.footer { --matangazo-red: #ed1c24; --matangazo-ink: #171717; margin-top: 20px; color: var(--muted); }
+.agency-footer { display: grid; grid-template-columns: max-content minmax(0, 1fr) max-content; align-items: center; gap: clamp(16px, 2.5vw, 36px); padding: clamp(20px, 3vw, 36px); border: 1px solid #e8e5e5; border-top: 4px solid var(--matangazo-red); border-radius: var(--radius-panel); background: white; color: var(--matangazo-ink); box-shadow: var(--shadow-panel); }
+.agency-brand { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; justify-self: start; font-size: 19px; font-weight: 850; letter-spacing: -.035em; }
+.agency-brand img { width: 44px; height: 44px; flex: none; object-fit: contain; }
+.agency-footer h2 { margin: 0; font-size: clamp(21px, 2.45vw, 31px); line-height: 1.15; letter-spacing: -.035em; }
+.agency-cta { background: #bd151c; color: white; text-align: center; }
+.agency-cta:hover { background: #9f1118; }
+.agency-cta .icon { width: 19px; height: 19px; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 62px; font-size: 12px; }
 .footer a:hover { text-decoration: underline; }
 .back-top { position: fixed; z-index: 3; right: max(14px, env(safe-area-inset-right)); bottom: max(15px, env(safe-area-inset-bottom)); width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--navy); box-shadow: 0 2px 8px #122a551a; font-size: 19px; }
@@ -234,11 +237,11 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
   .contact { margin-top: 40px; grid-template-columns: 1fr; gap: 12px; padding: 15px; }
   .contact-copy { padding: 10px 3px; }
   .branch-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .contact .branch-details a, .footer a { display: inline-flex; align-items: center; min-height: 44px; padding: 4px 8px; }
+  .contact .branch-details a, .footer-inner a { display: inline-flex; align-items: center; min-height: 44px; padding: 4px 8px; }
   .contact .map { min-height: 300px; }
   .share { padding: 54px 0 32px; }
-  .finder { flex-direction: column; align-items: flex-start; gap: 14px; }
-  .finder h2 { text-align: left; }
+  .agency-footer { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .agency-cta { justify-self: start; }
   .footer-inner { min-height: 76px; flex-wrap: wrap; align-content: center; gap: 5px 14px; }
   .footer-inner p { margin: 0; }
 }
