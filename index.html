@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
   <meta name="description" content="Demo de Express Care México. Consulta servicios de mantenimiento automotriz, cambio de aceite y ubicaciones de sucursales.">
   <meta name="theme-color" content="#102d68">
   <meta name="color-scheme" content="light">
@@ -19,7 +20,7 @@
   <link rel="canonical" href="https://erozkruzpe248.github.io/express-care-mexico/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23c71d36' d='M1 4h13l10 16-7 11z'/%3E%3Cpath fill='%231746a2' d='M25 4h14L20 36l-7-11z'/%3E%3C/svg%3E">
   <title>Express Care México | Servicios y sucursales (demo)</title>
-  <link rel="stylesheet" href="./styles.css?v=matangazo-2">
+  <link rel="stylesheet" href="./styles.css?v=revision-noviembre-2026">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -185,7 +186,7 @@
       ]
     }
   </script>
-  <script src="./app.js" defer></script>
+  <script src="./app.js?v=revision-noviembre-2026" defer></script>
 </head>
 <body>
   <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -253,10 +254,16 @@
       <div class="hero-copy">
         <h1 id="hero-title">Express Care México</h1>
         <p class="hero-subtitle">Mantenimiento automotriz</p>
-        <h2>15% de descuento<br>en cambio de aceite</h2>
-        <p class="hero-promo-period">Promoción del 1 al 30 de noviembre</p>
+        <div id="hero-promo" hidden>
+          <h2>15% de descuento<br>en cambio de aceite</h2>
+          <p class="hero-promo-period">Promoción del 1 al 30 de noviembre de 2026</p>
+        </div>
+        <div id="hero-services">
+          <h2>Servicios para tu auto</h2>
+          <p class="hero-promo-period">Cambio de aceite, filtros y más</p>
+        </div>
         <a class="button button-white" href="#contacto">Buscar un centro <svg class="icon direction-icon" aria-hidden="true" focusable="false"><use href="#icon-down"></use></svg></a>
-        <p class="hero-note">Promoción de demostración · Sin validez comercial</p>
+        <p class="hero-note">Sitio de demostración · Sin validez comercial</p>
       </div>
       <button class="zoom-trigger hero-media" type="button" aria-label="Ampliar foto del taller" aria-haspopup="dialog">
         <img class="hero-image" src="./assets/taller.jpg" alt="Auto con el cofre abierto en un taller de servicio" fetchpriority="high" width="500" height="500">
@@ -286,7 +293,8 @@
       <p class="availability">La disponibilidad de servicios varía según el centro.</p>
     </section>
 
-    <section class="services" id="servicios" aria-label="Detalle de los servicios" tabindex="-1">
+    <section class="services" id="servicios" aria-labelledby="services-title" tabindex="-1">
+      <h2 class="visually-hidden" id="services-title">Detalle de los servicios</h2>
       <div class="service-tabs" role="tablist" aria-label="Categorías de servicio">
         <button type="button" id="tab-aceite" role="tab" aria-selected="true" aria-controls="panel-aceite" data-service="aceite"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-aceite"></use></svg> Aceite</button>
         <button type="button" id="tab-filtros" role="tab" aria-selected="false" aria-controls="panel-filtros" data-service="filtros" tabindex="-1"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-filtros"></use></svg> Filtros</button>
