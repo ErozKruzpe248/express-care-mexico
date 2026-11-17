@@ -64,7 +64,7 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
 .hero h1, .hero h2, .hero p { margin: 0; }
 .hero h1 { font-size: clamp(25px, 2.6vw, 34px); line-height: 1.06; text-transform: uppercase; font-weight: 850; letter-spacing: -.03em; }
 .hero .hero-subtitle { margin-top: 8px; color: #cbdcff; font-size: 14px; text-transform: uppercase; font-weight: 750; letter-spacing: .075em; }
-.hero h2 { margin-top: 14px; font-size: clamp(30px, 4vw, 49px); line-height: 1; letter-spacing: -.05em; }
+.hero .hero-heading { margin-top: 14px; font-size: clamp(30px, 4vw, 49px); font-weight: bold; line-height: 1; letter-spacing: -.05em; }
 .hero .hero-promo-period { margin: 17px 0 19px; color: #e6edfa; font-size: 15px; font-weight: 750; }
 .button { display: inline-flex; min-height: 46px; justify-content: center; align-items: center; gap: 10px; padding: 10px 17px; border-radius: var(--radius-control); font-size: 13px; font-weight: 800; }
 .button-white { color: var(--navy); background: white; }
@@ -162,6 +162,7 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
 .agency-cta:hover { background: #ab142a; }
 .agency-cta .icon { width: 19px; height: 19px; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 62px; font-size: 12px; padding-inline-end: calc(52px + env(safe-area-inset-right)); }
+.contact .branch-details a, .footer-inner a { display: inline-flex; align-items: center; min-height: 44px; padding: 4px 8px; }
 .footer a:hover { text-decoration: underline; }
 .back-top { position: fixed; z-index: 3; right: max(14px, env(safe-area-inset-right)); bottom: max(15px, env(safe-area-inset-bottom)); width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--navy); box-shadow: 0 2px 8px #122a551a; font-size: 19px; }
 
@@ -216,7 +217,7 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
   .hero { margin-top: 25px; min-height: 0; grid-template-columns: 1fr; padding: 15px; gap: 19px; }
   .hero-copy { padding: 4px 3px; }
   .hero h1 { font-size: clamp(23px, 6.5vw, 35px); }
-  .hero h2 { font-size: clamp(28px, 8.4vw, 43px); }
+  .hero .hero-heading { font-size: clamp(28px, 8.4vw, 43px); }
   .hero-image { height: clamp(210px, 62vw, 320px); min-height: 0; }
   .overview { margin: 63px auto; }
   .overview-card, .overview-lists { grid-template-columns: 1fr; }
@@ -238,7 +239,6 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
   .contact { margin-top: 40px; grid-template-columns: 1fr; gap: 12px; padding: 15px; }
   .contact-copy { padding: 10px 3px; }
   .branch-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .contact .branch-details a, .footer-inner a { display: inline-flex; align-items: center; min-height: 44px; padding: 4px 8px; }
   .contact .map { min-height: 300px; }
   .share { padding: 54px 0 32px; }
   .agency-footer { flex-direction: column; gap: 14px; text-align: center; }
