@@ -20,6 +20,27 @@ window.addEventListener("pageshow", updatePromotion);
 document.addEventListener("visibilitychange", updatePromotion);
 updatePromotion();
 
+// Hits stores a shared total on its server. Each page load requests one badge;
+// switching branches or using anchors does not register another page view.
+const visitCounterImage = document.getElementById("visit-counter-image");
+const visitCounterStatus = document.getElementById("visit-counter-status");
+if (visitCounterImage && visitCounterStatus) {
+  visitCounterImage.addEventListener("load", () => {
+    visitCounterImage.hidden = false;
+    visitCounterStatus.hidden = true;
+  }, { once: true });
+  visitCounterImage.addEventListener("error", () => {
+    visitCounterImage.hidden = true;
+    visitCounterStatus.hidden = false;
+    visitCounterStatus.textContent = "No disponible";
+  }, { once: true });
+  const loadVisitCounter = () => {
+    visitCounterImage.src = visitCounterImage.dataset.counterSrc;
+  };
+  if (document.readyState === "complete") loadVisitCounter();
+  else window.addEventListener("load", loadVisitCounter, { once: true });
+}
+
 const serviceAssetUrls = globalThis.expressCareAssets ?? {};
 const services = [
   {
