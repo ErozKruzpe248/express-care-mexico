@@ -39,7 +39,7 @@ La promoción y los precios son datos de demostración.
 
 El pie de Matangazo muestra un total compartido mediante [Hits](https://github.com/silentsoft/hits). El servicio persiste el contador fuera de GitHub Pages, sin credenciales en el navegador. La clave estable es `erozkruzpe248.github.io/express-care-mexico`; se debe conservar al migrar el sitio para mantener el total.
 
-Cada carga de página solicita una sola imagen SVG después de la carga inicial; las pestañas de sucursales y los enlaces internos no suman. Son vistas de página, no personas únicas; las recargas y las comprobaciones del sitio también pueden sumar. Empieza al activar esta integración, sin agregar visitas anteriores ni valores ficticios. Si el proveedor falla, aparece «No disponible». Bloqueadores y fallos de red pueden impedir el registro. El contador depende de la disponibilidad de Hits y no sustituye una herramienta de analítica.
+Cada carga de página solicita una sola imagen SVG con prioridad baja; las pestañas de sucursales y los enlaces internos no suman. Son vistas de página, no personas únicas; las recargas y las comprobaciones del sitio también pueden sumar. Empieza al activar esta integración, sin agregar visitas anteriores ni valores ficticios. Si el proveedor falla, aparece «No disponible». Bloqueadores y fallos de red pueden impedir el registro. El contador depende de la disponibilidad de Hits y no sustituye una herramienta de analítica.
 
 ## Publicación y promoción
 
