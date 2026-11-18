@@ -37,8 +37,7 @@ if (visitCounterImage && visitCounterStatus) {
   const loadVisitCounter = () => {
     visitCounterImage.src = visitCounterImage.dataset.counterSrc;
   };
-  if (document.readyState === "complete") loadVisitCounter();
-  else window.addEventListener("load", loadVisitCounter, { once: true });
+  loadVisitCounter();
 }
 
 const serviceAssetUrls = globalThis.expressCareAssets ?? {};
