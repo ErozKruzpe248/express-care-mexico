@@ -371,8 +371,33 @@
   <footer class="footer" id="matangazo">
     <div class="shell">
       <section class="agency-footer" aria-labelledby="agency-footer-title">
+        <div class="visit-counter" aria-label="Visitas totales del sitio">
+          <div class="visit-reactions" aria-hidden="true">
+            <span class="reaction-heart reaction-heart-small">♥</span>
+            <span class="reaction-like">like</span>
+            <span class="reaction-heart">♥</span>
+            <svg class="reaction-thumb" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10H3v11h4V10Zm2 11h9a2 2 0 0 0 2-1.6l1.5-7A2 2 0 0 0 19.5 10H15l.7-4.4A2.3 2.3 0 0 0 13.4 3H13l-4 7v11Z"/></svg>
+            <span class="reaction-heart reaction-heart-tiny">♥</span>
+          </div>
+          <div class="visit-counter-card">
+            <span class="visit-counter-label">Tus visitas</span>
+            <div class="visit-counter-total" role="status" aria-live="polite">
+              <img id="visit-counter-image" alt="Total acumulado de visitas al sitio" height="56" decoding="async" fetchpriority="low" hidden data-counter-src="https://hits.sh/erozkruzpe248.github.io/express-care-mexico.svg?label=%20&amp;color=e30613&amp;labelColor=e30613&amp;style=flat-square">
+              <span id="visit-counter-status">Cargando…</span>
+              <noscript><img src="https://hits.sh/erozkruzpe248.github.io/express-care-mexico.svg?label=%20&amp;color=e30613&amp;labelColor=e30613&amp;style=flat-square" alt="Total acumulado de visitas al sitio" height="56"></noscript>
+            </div>
+          </div>
+          <span class="visit-counter-caption">Visitas totales del sitio</span>
+        </div>
         <a class="agency-brand" href="https://matangazo.mx/" aria-label="Matangazo.mx">
-          <img src="./assets/matangazo-logo.png" alt="" width="44" height="44" loading="lazy" decoding="async">
+          <svg class="agency-logo" viewBox="335 347 1205 825" width="120" height="82" aria-hidden="true" focusable="false">
+            <defs>
+              <filter id="matangazo-logo-color" color-interpolation-filters="sRGB">
+                <feColorMatrix type="matrix" values="0 0 0 0 .89 0 0 0 0 .024 0 0 0 0 .075 0 -1 0 0 1"/>
+              </filter>
+            </defs>
+            <image href="./assets/matangazo-logo-nuevo.png" width="1875" height="1875" filter="url(#matangazo-logo-color)"/>
+          </svg>
         </a>
         <h2 id="agency-footer-title">Digitaliza tu negocio con Presencia Web de Matangazo.</h2>
         <a class="button agency-cta" href="https://wa.me/528115963472?text=Hola%2C%20Matangazo.%20Vi%20el%20demo%20de%20Express%20Care%20y%20me%20interesa%20Presencia%20Web%20para%20mi%20negocio." target="_blank" rel="noopener">
