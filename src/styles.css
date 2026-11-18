@@ -156,7 +156,7 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
 .footer { margin-top: 20px; color: var(--muted); }
 .agency-footer { display: grid; grid-template-columns: 165px 115px minmax(0, 1fr) auto; align-items: center; gap: clamp(18px, 2.4vw, 30px); min-height: 210px; padding: 26px 32px; border-radius: var(--radius-panel); background: var(--blue); color: white; box-shadow: var(--shadow-panel); }
 .agency-brand { display: grid; place-items: center; width: 115px; min-height: 82px; }
-.agency-logo { display: block; width: 100%; height: auto; overflow: visible; }
+.agency-logo { display: block; width: 100%; height: auto; overflow: hidden; }
 .agency-footer h2 { max-width: 25ch; margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.15; letter-spacing: -.035em; }
 .agency-cta { min-height: 46px; padding: 12px 18px; border-radius: 30px; background: var(--red); color: white; font-size: 12px; text-align: center; }
 .agency-cta:hover { background: #ab142a; }
