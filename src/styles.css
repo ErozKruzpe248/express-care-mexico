@@ -154,11 +154,13 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
 .share-status { min-height: 20px; margin: 8px 0 0; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
 
 .footer { margin-top: 20px; color: var(--muted); }
-.agency-footer { display: grid; grid-template-columns: 165px 115px minmax(0, 1fr) auto; align-items: center; gap: clamp(18px, 2.4vw, 30px); min-height: 210px; padding: 26px 32px; border-radius: var(--radius-panel); background: var(--blue); color: white; box-shadow: var(--shadow-panel); }
+.agency-footer { display: grid; grid-template-columns: 165px 115px minmax(0, 1fr); align-items: center; gap: clamp(18px, 2.4vw, 30px); min-height: 210px; padding: 26px 32px; border-radius: var(--radius-panel); background: var(--blue); color: white; box-shadow: var(--shadow-panel); }
 .agency-brand { display: grid; place-items: center; width: 115px; min-height: 82px; }
 .agency-logo { display: block; width: 100%; height: auto; overflow: hidden; }
-.agency-footer h2 { max-width: 25ch; margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.15; letter-spacing: -.035em; }
-.agency-cta { min-height: 46px; padding: 12px 18px; border-radius: 30px; background: var(--red); color: white; font-size: 12px; text-align: center; }
+.agency-copy { min-width: 0; }
+.agency-footer h2 { margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.15; letter-spacing: -.035em; }
+.agency-copy p { margin: 5px 0 12px; font-size: 14px; line-height: 1.5; font-weight: 600; }
+.agency-cta { width: 100%; min-height: 46px; padding: 12px 18px; border-radius: 30px; background: var(--red); color: white; font-size: 13px; text-align: center; }
 .agency-cta:hover { background: #ab142a; }
 .agency-cta .icon { width: 19px; height: 19px; }
 .visit-counter { min-width: 0; text-align: center; }
@@ -221,9 +223,6 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
   .agency-footer { grid-template-columns: 150px 90px minmax(0, 1fr); gap: 20px; padding: 24px; }
   .agency-brand { width: 90px; }
   .agency-footer h2 { font-size: 28px; }
-  .agency-cta { grid-column: 3; justify-self: start; margin-top: -8px; }
-  .visit-counter { grid-row: span 2; }
-  .agency-brand { grid-row: span 2; }
 }
 
 @media (max-width: 730px) {
@@ -265,8 +264,9 @@ section[id], .accordion-toggle { scroll-margin-top: 20px; }
   .share { padding: 54px 0 32px; }
   .agency-footer { grid-template-columns: minmax(0, 150px) minmax(0, 100px); justify-content: center; gap: 20px 24px; padding: 24px 20px; text-align: center; }
   .agency-brand { width: 100%; }
-  .agency-footer h2 { grid-column: 1 / -1; max-width: 25ch; justify-self: center; font-size: clamp(23px, 5.4vw, 30px); }
-  .agency-cta { grid-column: 1 / -1; justify-self: center; max-width: 100%; }
+  .agency-copy { grid-column: 1 / -1; }
+  .agency-footer h2 { font-size: clamp(23px, 5.4vw, 30px); }
+  .agency-cta { max-width: 100%; }
   .footer-inner { min-height: 76px; flex-wrap: wrap; align-content: center; gap: 5px 14px; }
   .footer-inner p { margin: 0; }
 }
